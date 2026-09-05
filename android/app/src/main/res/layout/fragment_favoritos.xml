@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_cabecalho"
+        android:paddingHorizontal="@dimen/espaco_m"
+        android:paddingVertical="@dimen/espaco_m">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_favoritos"
+            style="@style/Texto.TituloCabecalho" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subtitulo_favoritos"
+            style="@style/Texto.SubtituloCabecalho" />
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/atualizar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/espaco_g">
+
+                <include
+                    android:id="@+id/bannerOfflineFavoritos"
+                    layout="@layout/view_banner_offline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/espaco_m"
+                    android:layout_marginTop="@dimen/espaco_m" />
+
+                <include
+                    android:id="@+id/estadoFavoritos"
+                    layout="@layout/view_estado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tituloLinhasFavoritas"
+                    style="@style/Texto.Secao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/espaco_m"
+                    android:paddingTop="@dimen/espaco_m"
+                    android:paddingBottom="@dimen/espaco_s"
+                    android:text="@string/linhas_favoritas" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listaLinhasFavoritas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/espaco_m"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_linha" />
+
+                <TextView
+                    android:id="@+id/tituloPontosSalvos"
+                    style="@style/Texto.Secao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/espaco_m"
+                    android:paddingTop="@dimen/espaco_m"
+                    android:paddingBottom="@dimen/espaco_s"
+                    android:text="@string/pontos_salvos" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listaPontosSalvos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/espaco_m"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_ponto_salvo" />
+
+                <TextView
+                    android:id="@+id/tituloAvisos"
+                    style="@style/Texto.Secao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/espaco_m"
+                    android:paddingTop="@dimen/espaco_m"
+                    android:paddingBottom="@dimen/espaco_s"
+                    android:text="@string/avisos_de_operacao" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listaAvisos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/espaco_m"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_aviso" />
+
+                <TextView
+                    style="@style/Texto.Secao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/espaco_m"
+                    android:paddingTop="@dimen/espaco_m"
+                    android:paddingBottom="@dimen/espaco_s"
+                    android:text="@string/informacoes_uteis" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/espaco_m">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:divider="@drawable/divisor"
+                        android:showDividers="middle">
+
+                        <include android:id="@+id/atalhoTarifas" layout="@layout/item_informacao"
+                            android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+                        <include android:id="@+id/atalhoTerminais" layout="@layout/item_informacao"
+                            android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+                        <include android:id="@+id/atalhoContato" layout="@layout/item_informacao"
+                            android:layout_width="match_parent" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

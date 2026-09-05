@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_cabecalho"
+        android:paddingHorizontal="@dimen/espaco_m"
+        android:paddingVertical="@dimen/espaco_m">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mais_titulo"
+            style="@style/Texto.TituloCabecalho" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mais_subtitulo"
+            style="@style/Texto.SubtituloCabecalho" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/espaco_g">
+
+            <TextView
+                style="@style/Texto.Secao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/espaco_m"
+                android:paddingTop="@dimen/espaco_m"
+                android:paddingBottom="@dimen/espaco_s"
+                android:text="@string/informacoes_uteis" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/espaco_m">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:divider="@drawable/divisor"
+                    android:showDividers="middle">
+
+                    <include android:id="@+id/itemTarifas" layout="@layout/item_informacao"
+                        android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+                    <include android:id="@+id/itemTerminais" layout="@layout/item_informacao"
+                        android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+                    <include android:id="@+id/itemContato" layout="@layout/item_informacao"
+                        android:layout_width="match_parent" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                style="@style/Texto.Secao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/espaco_m"
+                android:paddingTop="@dimen/espaco_g"
+                android:paddingBottom="@dimen/espaco_s"
+                android:text="@string/secao_dados" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/espaco_m">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/blocoServidor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="?attr/selectableItemBackground"
+                        android:minHeight="@dimen/alvo_toque"
+                        android:paddingHorizontal="@dimen/espaco_m"
+                        android:paddingVertical="12dp">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_servidor"
+                            app:tint="@color/azul_primario"
+                            android:contentDescription="@null" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="@dimen/espaco_m"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/Texto.Corpo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:text="@string/servidor_dados" />
+
+                            <TextView
+                                android:id="@+id/valorServidor"
+                                style="@style/Texto.Apoio"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                tools:text="http://10.0.2.2:3000/api/v1/" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_chevron"
+                            app:tint="@color/texto_terciario"
+                            android:contentDescription="@null" />
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/contorno" />
+
+                    <LinearLayout
+                        android:id="@+id/blocoSincronizar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="?attr/selectableItemBackground"
+                        android:minHeight="@dimen/alvo_toque"
+                        android:paddingHorizontal="@dimen/espaco_m"
+                        android:paddingVertical="12dp">
+
+                        <ImageView
+                            android:id="@+id/iconeSincronizar"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_sincronizar"
+                            app:tint="@color/azul_primario"
+                            android:contentDescription="@null" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="@dimen/espaco_m"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/Texto.Corpo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:text="@string/sincronizar_agora" />
+
+                            <TextView
+                                android:id="@+id/valorUltimaSincronizacao"
+                                style="@style/Texto.Apoio"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                tools:text="Última sincronização: 04/09 às 13:20" />
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/progressoSincronizacao"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/contorno" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:minHeight="@dimen/alvo_toque"
+                        android:paddingHorizontal="@dimen/espaco_m"
+                        android:paddingVertical="12dp">
+
+                        <ImageView
+                            android:id="@+id/iconeConexao"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_offline"
+                            app:tint="@color/texto_secundario"
+                            android:contentDescription="@null" />
+
+                        <TextView
+                            android:id="@+id/valorConexao"
+                            style="@style/Texto.Corpo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="@dimen/espaco_m"
+                            android:textSize="14sp"
+                            tools:text="Aplicativo online" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                style="@style/Texto.Secao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/espaco_m"
+                android:paddingTop="@dimen/espaco_g"
+                android:paddingBottom="@dimen/espaco_s"
+                android:text="@string/secao_sobre" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/espaco_m">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/espaco_m">
+
+                    <TextView
+                        style="@style/Texto.Corpo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:text="@string/sobre_projeto" />
+
+                    <TextView
+                        style="@style/Texto.Apoio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textSize="12sp"
+                        android:text="@string/sobre_projeto_detalhe" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="@dimen/espaco_m"
+                        android:background="@color/contorno" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="1dp"
+                            android:src="@drawable/ic_aviso"
+                            app:tint="@color/ambar_aviso"
+                            android:contentDescription="@null" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/Texto.Corpo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:text="@string/aviso_dados_ficticios" />
+
+                            <TextView
+                                style="@style/Texto.Apoio"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:textSize="12sp"
+                                android:text="@string/aviso_dados_ficticios_detalhe" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/valorVersao"
+                        style="@style/Texto.Apoio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/espaco_m"
+                        android:textSize="11sp"
+                        android:textColor="@color/texto_terciario"
+                        tools:text="Linha Viva 1.0 · API 26+" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

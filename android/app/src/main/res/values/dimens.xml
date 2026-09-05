@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="espaco_xs">4dp</dimen>
+    <dimen name="espaco_s">8dp</dimen>
+    <dimen name="espaco_m">16dp</dimen>
+    <dimen name="espaco_g">24dp</dimen>
+    <dimen name="espaco_xg">32dp</dimen>
+
+    <dimen name="raio_card">16dp</dimen>
+    <dimen name="raio_chip">20dp</dimen>
+    <dimen name="raio_badge">10dp</dimen>
+
+    <dimen name="alvo_toque">48dp</dimen>
+
+    <dimen name="texto_titulo">22sp</dimen>
+    <dimen name="texto_secao">13sp</dimen>
+    <dimen name="texto_corpo">15sp</dimen>
+    <dimen name="texto_apoio">13sp</dimen>
+</resources>

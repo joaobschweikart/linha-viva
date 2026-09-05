@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="avisar_em_paradas_plural">
+        <item quantity="one">Avisar em %d parada</item>
+        <item quantity="other">Avisar em %d paradas</item>
+    </plurals>
+
+    <plurals name="notificacao_aproximacao_paradas">
+        <item quantity="one">O veículo está a %1$d parada do ponto %2$s. Prepare-se para embarcar.</item>
+        <item quantity="other">O veículo está a %1$d paradas do ponto %2$s. Prepare-se para embarcar.</item>
+    </plurals>
+</resources>

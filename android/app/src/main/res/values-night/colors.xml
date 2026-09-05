@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="azul_claro">#16263C</color>
+    <color name="verde_claro">#0F2A22</color>
+    <color name="ambar_claro">#2E2513</color>
+
+    <color name="fundo">@color/fundo_noturno</color>
+    <color name="superficie">@color/superficie_noturna</color>
+    <color name="superficie_variante">@color/superficie_variante_noturna</color>
+    <color name="contorno">@color/contorno_noturno</color>
+
+    <color name="texto_primario">@color/texto_primario_noturno</color>
+    <color name="texto_secundario">@color/texto_secundario_noturno</color>
+    <color name="texto_terciario">#7C8695</color>
+</resources>

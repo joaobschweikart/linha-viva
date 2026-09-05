@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <!-- O icone adaptativo precisa continuar em mipmap-anydpi-v26: sem o
+         qualificador de versao o AAPT nao resolve mipmap/ic_launcher. -->
+    <issue id="ObsoleteSdkInt">
+        <ignore path="src/main/res/mipmap-anydpi-v26" />
+    </issue>
+
+    <!-- Dicionario do lint e em ingles; os textos do app estao em portugues. -->
+    <issue id="Typos" severity="ignore" />
+
+    <!-- Versoes fixadas de proposito para manter o build reprodutivel na entrega. -->
+    <issue id="GradleDependency" severity="ignore" />
+
+    <issue id="MissingTranslation" severity="ignore" />
+</lint>

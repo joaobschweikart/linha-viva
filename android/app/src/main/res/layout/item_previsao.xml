@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="?attr/selectableItemBackground"
+    android:minHeight="@dimen/alvo_toque"
+    android:paddingVertical="@dimen/espaco_s">
+
+    <TextView
+        android:id="@+id/numeroLinha"
+        style="@style/Badge.Linha"
+        tools:text="215" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="@dimen/espaco_s"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nomeLinha"
+            style="@style/Texto.Corpo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            tools:text="Efapi via Centro" />
+
+        <TextView
+            android:id="@+id/detalhePrevisao"
+            style="@style/Texto.Apoio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            tools:text="sai do terminal 08:05" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/indicadorTempoReal"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginEnd="6dp"
+        android:background="@drawable/bg_ponto_verde"
+        android:contentDescription="@string/cd_indicador_tempo_real" />
+
+    <TextView
+        android:id="@+id/tempoPrevisao"
+        style="@style/Texto.Corpo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="56dp"
+        android:gravity="end"
+        android:textStyle="bold"
+        android:textColor="@color/verde_tempo_real"
+        tools:text="4 min" />
+</LinearLayout>

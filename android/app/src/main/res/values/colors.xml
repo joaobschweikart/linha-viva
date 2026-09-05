@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="azul_primario">#0B4DA2</color>
+    <color name="azul_escuro">#073A7D</color>
+    <color name="azul_profundo">#052C60</color>
+    <color name="azul_claro">#E7EFFA</color>
+    <color name="azul_medio">#3D7AC7</color>
+
+    <color name="verde_tempo_real">#00A870</color>
+    <color name="verde_claro">#E0F5EE</color>
+
+    <color name="ambar_aviso">#E8A317</color>
+    <color name="ambar_claro">#FDF3DE</color>
+
+    <color name="vermelho_erro">#C62828</color>
+
+    <color name="branco">#FFFFFF</color>
+    <color name="fundo">#F4F6F9</color>
+    <color name="superficie">#FFFFFF</color>
+    <color name="superficie_variante">#EEF1F6</color>
+    <color name="contorno">#D7DDE6</color>
+
+    <color name="texto_primario">#12171F</color>
+    <color name="texto_secundario">#5A6472</color>
+    <color name="texto_terciario">#8A94A3</color>
+    <color name="texto_sobre_azul_suave">#C9DAF2</color>
+
+    <color name="fundo_noturno">#101418</color>
+    <color name="superficie_noturna">#191F26</color>
+    <color name="superficie_variante_noturna">#232B34</color>
+    <color name="contorno_noturno">#333C47</color>
+    <color name="texto_primario_noturno">#ECEFF3</color>
+    <color name="texto_secundario_noturno">#A8B2BF</color>
+</resources>

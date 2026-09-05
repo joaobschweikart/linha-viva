@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="espaco_m">20dp</dimen>
+    <dimen name="espaco_g">32dp</dimen>
+    <dimen name="texto_titulo">26sp</dimen>
+    <dimen name="texto_corpo">16sp</dimen>
+</resources>

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_cabecalho"
+        android:paddingHorizontal="@dimen/espaco_s"
+        android:paddingVertical="@dimen/espaco_s">
+
+        <ImageButton
+            android:id="@+id/botaoVoltar"
+            android:layout_width="@dimen/alvo_toque"
+            android:layout_height="@dimen/alvo_toque"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_voltar"
+            app:tint="@color/branco"
+            android:contentDescription="@string/cd_voltar" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/espaco_xs"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tituloPonto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/branco"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Ponto 1043" />
+
+            <TextView
+                android:id="@+id/subtituloPonto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/texto_sobre_azul_suave"
+                android:textSize="12sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="Av. Getúlio Vargas, 1240 · Centro" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/botaoFavorito"
+            android:layout_width="@dimen/alvo_toque"
+            android:layout_height="@dimen/alvo_toque"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_estrela_contorno"
+            app:tint="@color/branco"
+            android:contentDescription="@string/cd_favorito" />
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/atualizar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/espaco_m">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+
+                    <org.osmdroid.views.MapView
+                        android:id="@+id/mapaPonto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/botaoVerNoMapa"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_gravity="top|end"
+                        android:layout_margin="@dimen/espaco_s"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:minHeight="36dp"
+                        android:textSize="12sp"
+                        android:text="@string/ver_no_mapa" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@color/superficie"
+                    android:paddingHorizontal="@dimen/espaco_m"
+                    android:paddingVertical="10dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_pedestre"
+                        app:tint="@color/texto_secundario"
+                        android:contentDescription="@null" />
+
+                    <TextView
+                        android:id="@+id/distanciaPonto"
+                        style="@style/Texto.Apoio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/espaco_xs"
+                        android:textSize="12sp"
+                        tools:text="120 m a pé" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="@dimen/espaco_m"
+                        android:src="@drawable/ic_abrigo"
+                        app:tint="@color/texto_secundario"
+                        android:contentDescription="@null" />
+
+                    <TextView
+                        android:id="@+id/abrigoPonto"
+                        style="@style/Texto.Apoio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/espaco_xs"
+                        android:textSize="12sp"
+                        tools:text="Abrigo coberto" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="@dimen/espaco_m"
+                        android:src="@drawable/ic_acessivel"
+                        app:tint="@color/texto_secundario"
+                        android:contentDescription="@null" />
+
+                    <TextView
+                        android:id="@+id/acessibilidadePonto"
+                        style="@style/Texto.Apoio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/espaco_xs"
+                        android:textSize="12sp"
+                        tools:text="Acessível" />
+                </LinearLayout>
+
+                <include
+                    android:id="@+id/bannerOfflinePonto"
+                    layout="@layout/view_banner_offline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/espaco_m"
+                    android:layout_marginTop="@dimen/espaco_m" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/espaco_m"
+                    android:paddingTop="@dimen/espaco_m"
+                    android:paddingBottom="@dimen/espaco_xs">
+
+                    <TextView
+                        style="@style/Texto.Secao"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/proximas_partidas" />
+
+                    <View
+                        android:id="@+id/pontoIndicadorLive"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/bg_ponto_verde" />
+
+                    <TextView
+                        android:id="@+id/rotuloOrigemDados"
+                        style="@style/Texto.Apoio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:textColor="@color/verde_tempo_real"
+                        tools:text="tempo real" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listaPrevisoes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/espaco_m"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_previsao" />
+
+                <include
+                    android:id="@+id/estadoPonto"
+                    layout="@layout/view_estado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:id="@+id/blocoQrCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/espaco_m"
+                    android:layout_marginTop="@dimen/espaco_m"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_card_info"
+                    android:padding="@dimen/espaco_m"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:src="@drawable/ic_qrcode"
+                        app:tint="@color/azul_primario"
+                        android:contentDescription="@null" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/espaco_m"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.Corpo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/azul_escuro"
+                            android:text="@string/qr_titulo" />
+
+                        <TextView
+                            style="@style/Texto.Apoio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:textColor="@color/azul_escuro"
+                            android:text="@string/qr_detalhe" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/rodapePonto"
+                    style="@style/Texto.Apoio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/espaco_m"
+                    android:paddingHorizontal="@dimen/espaco_m"
+                    android:gravity="center"
+                    android:textSize="11sp"
+                    android:textColor="@color/texto_terciario"
+                    android:text="@string/aviso_previsao_estimada" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

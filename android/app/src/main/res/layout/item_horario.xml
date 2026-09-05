@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hora"
+    style="@style/Texto.Corpo"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:layout_margin="@dimen/espaco_xs"
+    android:background="@drawable/bg_pill_neutro"
+    android:gravity="center"
+    android:textSize="14sp"
+    tools:text="08:05" />

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_cabecalho"
+        android:paddingHorizontal="@dimen/espaco_s"
+        android:paddingVertical="@dimen/espaco_s">
+
+        <ImageButton
+            android:id="@+id/botaoVoltar"
+            android:layout_width="@dimen/alvo_toque"
+            android:layout_height="@dimen/alvo_toque"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_voltar"
+            app:tint="@color/branco"
+            android:contentDescription="@string/cd_voltar" />
+
+        <TextView
+            android:id="@+id/tituloInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/espaco_xs"
+            android:textColor="@color/branco"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Tarifas e cartão" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaInfo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/espaco_m"
+        android:clipToPadding="false"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_informacao" />
+
+    <TextView
+        style="@style/Texto.Apoio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/espaco_m"
+        android:gravity="center"
+        android:textSize="11sp"
+        android:textColor="@color/texto_terciario"
+        android:text="@string/aviso_dados_ficticios_detalhe" />
+</LinearLayout>

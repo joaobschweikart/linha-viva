@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <FrameLayout
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/bg_circulo_splash">
+
+            <FrameLayout
+                android:layout_width="132dp"
+                android:layout_height="132dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_circulo_splash_interno">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_logo_grande"
+                    android:contentDescription="@string/cd_logo" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espaco_g"
+            android:text="@string/app_name"
+            android:textColor="@color/branco"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:letterSpacing="-0.01" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espaco_xs"
+            android:text="@string/app_subtitulo"
+            android:textColor="@color/texto_sobre_azul_suave"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="56dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="@dimen/espaco_m"
+            android:background="@color/verde_tempo_real" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espaco_xg"
+            android:orientation="horizontal">
+
+            <View android:id="@+id/pontoCarga1"
+                android:layout_width="8dp" android:layout_height="8dp"
+                android:background="@drawable/bg_circulo_splash_interno" />
+            <View android:id="@+id/pontoCarga2"
+                android:layout_width="8dp" android:layout_height="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_circulo_splash_interno" />
+            <View android:id="@+id/pontoCarga3"
+                android:layout_width="8dp" android:layout_height="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_circulo_splash_interno" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="@dimen/espaco_xg"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/splashStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/espaco_s"
+            android:textColor="@color/texto_sobre_azul_suave"
+            android:textSize="12sp"
+            android:text="@string/carregando" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_assinatura"
+            android:textColor="#8FB2DE"
+            android:textSize="11sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_versao"
+            android:textColor="#8FB2DE"
+            android:textSize="11sp" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="?attr/selectableItemBackground"
+    android:minHeight="52dp"
+    android:paddingHorizontal="@dimen/espaco_m">
+
+    <FrameLayout
+        android:layout_width="24dp"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/tracoSuperior"
+            android:layout_width="2dp"
+            android:layout_height="26dp"
+            android:layout_gravity="top|center_horizontal"
+            android:background="@drawable/bg_linha_vertical_ativa" />
+
+        <View
+            android:id="@+id/tracoInferior"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="26dp"
+            android:layout_gravity="top|center_horizontal"
+            android:background="@drawable/bg_linha_vertical" />
+
+        <View
+            android:id="@+id/marcadorPonto"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_ponto_inativo" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="@dimen/espaco_s"
+        android:layout_marginVertical="@dimen/espaco_s"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nomePonto"
+            style="@style/Texto.Corpo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            tools:text="Av. Getúlio Vargas, 1240" />
+
+        <TextView
+            android:id="@+id/marcaVeiculo"
+            style="@style/Texto.Apoio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:textColor="@color/verde_tempo_real"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:text="@string/seu_onibus_aqui" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/horaPonto"
+        style="@style/Texto.Apoio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:minWidth="48dp"
+        android:gravity="end"
+        tools:text="08:11" />
+</LinearLayout>

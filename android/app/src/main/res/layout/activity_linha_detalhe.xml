@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_cabecalho">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/espaco_s"
+            android:paddingTop="@dimen/espaco_s">
+
+            <ImageButton
+                android:id="@+id/botaoVoltar"
+                android:layout_width="@dimen/alvo_toque"
+                android:layout_height="@dimen/alvo_toque"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_voltar"
+                app:tint="@color/branco"
+                android:contentDescription="@string/cd_voltar" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/espaco_xs"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tituloLinha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/branco"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="Linha 215" />
+
+                <TextView
+                    android:id="@+id/subtituloLinha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/texto_sobre_azul_suave"
+                    android:textSize="12sp"
+                    tools:text="Efapi via Centro" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/botaoFavorito"
+                android:layout_width="@dimen/alvo_toque"
+                android:layout_height="@dimen/alvo_toque"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_estrela_contorno"
+                app:tint="@color/branco"
+                android:contentDescription="@string/cd_favorito" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/seletorSentido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/espaco_m"
+            android:layout_marginTop="@dimen/espaco_s"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botaoSentidoIda"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:textSize="12sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/selector_texto_sentido"
+                app:backgroundTint="@color/selector_fundo_sentido"
+                app:strokeColor="#66FFFFFF"
+                tools:text="Terminal → Efapi" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botaoSentidoVolta"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:textSize="12sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/selector_texto_sentido"
+                app:backgroundTint="@color/selector_fundo_sentido"
+                app:strokeColor="#66FFFFFF"
+                tools:text="Efapi → Terminal" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/abas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espaco_s"
+            android:background="@android:color/transparent"
+            app:tabTextColor="@color/texto_sobre_azul_suave"
+            app:tabSelectedTextColor="@color/branco"
+            app:tabIndicatorColor="@color/branco"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="fixed"
+            app:tabGravity="fill" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/bannerOfflineDetalhe"
+        layout="@layout/view_banner_offline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/espaco_m"
+        android:layout_marginTop="@dimen/espaco_s" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/painelItinerario"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/espaco_m">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_card_info"
+                    android:layout_margin="@dimen/espaco_m"
+                    android:padding="@dimen/espaco_m">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_relogio"
+                        app:tint="@color/azul_primario"
+                        android:contentDescription="@null" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/proximaSaida"
+                            style="@style/Texto.Apoio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textColor="@color/azul_escuro"
+                            tools:text="Próxima saída do terminal: 08:05" />
+
+                        <TextView
+                            android:id="@+id/intervaloLinha"
+                            style="@style/Texto.Apoio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:textColor="@color/azul_escuro"
+                            tools:text="Intervalo médio informado: 20 min" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Texto.Secao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/espaco_m"
+                    android:paddingBottom="@dimen/espaco_s"
+                    android:text="@string/pontos_do_itinerario" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listaItinerario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="6"
+                    tools:listitem="@layout/item_itinerario" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/painelHorarios"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/espaco_m">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/filtrosDia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipUtil"
+                        style="@style/Widget.LinhaViva.Chip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/dia_util" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipSabado"
+                        style="@style/Widget.LinhaViva.Chip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dia_sabado" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipDomingo"
+                        style="@style/Widget.LinhaViva.Chip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dia_domingo" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listaHorarios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/espaco_s"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="12"
+                    tools:listitem="@layout/item_horario" />
+
+                <include
+                    android:id="@+id/estadoHorarios"
+                    layout="@layout/view_estado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <org.osmdroid.views.MapView
+            android:id="@+id/mapaLinha"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/superficie"
+        android:elevation="8dp"
+        android:padding="@dimen/espaco_m">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botaoTempoReal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_onibus"
+            app:iconGravity="textStart"
+            android:text="@string/acompanhar_tempo_real" />
+    </LinearLayout>
+</LinearLayout>

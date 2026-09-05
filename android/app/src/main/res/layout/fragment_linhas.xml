@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_cabecalho"
+        android:paddingHorizontal="@dimen/espaco_m"
+        android:paddingTop="@dimen/espaco_m"
+        android:paddingBottom="@dimen/espaco_m">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nav_linhas"
+                    android:textColor="@color/branco"
+                    android:textSize="@dimen/texto_titulo"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/subtituloLinhas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/texto_sobre_azul_suave"
+                    android:textSize="12sp"
+                    tools:text="Auto Viação Chapecó" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/botaoAvisos"
+                android:layout_width="@dimen/alvo_toque"
+                android:layout_height="@dimen/alvo_toque"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_sino"
+                app:tint="@color/branco"
+                android:contentDescription="@string/cd_notificacoes" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="@dimen/espaco_m"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_campo_busca_azul"
+            android:paddingHorizontal="@dimen/espaco_m">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_busca"
+                app:tint="@color/texto_sobre_azul_suave"
+                android:contentDescription="@string/cd_buscar" />
+
+            <EditText
+                android:id="@+id/campoBusca"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:background="@null"
+                android:hint="@string/busca_linhas"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@color/branco"
+                android:textColorHint="@color/texto_sobre_azul_suave"
+                android:textSize="15sp"
+                android:autofillHints="" />
+
+            <ImageView
+                android:id="@+id/botaoLimparBusca"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_fechar"
+                app:tint="@color/texto_sobre_azul_suave"
+                android:visibility="gone"
+                android:contentDescription="@null" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/bannerOfflineLinhas"
+        layout="@layout/view_banner_offline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/espaco_m"
+        android:layout_marginTop="@dimen/espaco_s" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/espaco_s"
+        android:paddingHorizontal="@dimen/espaco_m"
+        android:scrollbars="none"
+        android:clipToPadding="false">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/filtrosLinhas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            app:singleLine="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTodas"
+                style="@style/Widget.LinhaViva.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/filtro_todas" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFavoritas"
+                style="@style/Widget.LinhaViva.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filtro_favoritas" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipProximas"
+                style="@style/Widget.LinhaViva.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filtro_proximas" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAcessiveis"
+                style="@style/Widget.LinhaViva.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filtro_acessiveis" />
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/atualizar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/espaco_s">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/espaco_m"
+                android:paddingBottom="@dimen/espaco_m">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listaLinhas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="6"
+                    tools:listitem="@layout/item_linha" />
+
+                <include
+                    android:id="@+id/estadoLinhas"
+                    layout="@layout/view_estado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

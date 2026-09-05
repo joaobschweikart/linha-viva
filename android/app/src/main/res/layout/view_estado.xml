@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingHorizontal="@dimen/espaco_g"
+    android:paddingVertical="@dimen/espaco_xg"
+    android:visibility="gone">
+
+    <ImageView
+        android:id="@+id/estadoIcone"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_info"
+        app:tint="@color/texto_terciario"
+        android:contentDescription="@null" />
+
+    <TextView
+        android:id="@+id/estadoTitulo"
+        style="@style/Texto.Corpo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/espaco_m"
+        android:gravity="center"
+        android:textStyle="bold"
+        tools:text="Nenhuma linha encontrada" />
+
+    <TextView
+        android:id="@+id/estadoMensagem"
+        style="@style/Texto.Apoio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/espaco_xs"
+        android:gravity="center"
+        tools:text="Tente outro termo de busca." />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/estadoAcao"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/espaco_m"
+        android:visibility="gone"
+        android:text="@string/tentar_novamente" />
+</LinearLayout>

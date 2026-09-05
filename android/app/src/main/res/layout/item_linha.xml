@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/espaco_s"
+    app:cardCornerRadius="14dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:minHeight="64dp"
+        android:paddingHorizontal="@dimen/espaco_m"
+        android:paddingVertical="10dp">
+
+        <TextView
+            android:id="@+id/numeroLinha"
+            style="@style/Badge.Linha"
+            tools:text="215" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/espaco_m"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/nomeLinha"
+                    style="@style/Texto.Corpo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    tools:text="Efapi via Centro" />
+
+                <ImageView
+                    android:id="@+id/iconeFavorito"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="@dimen/espaco_s"
+                    android:src="@drawable/ic_estrela_cheia"
+                    app:tint="@color/ambar_aviso"
+                    android:visibility="gone"
+                    android:contentDescription="@string/cd_favorito" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/sentidoLinha"
+                    style="@style/Texto.Apoio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    tools:text="Terminal → Efapi" />
+
+                <ImageView
+                    android:id="@+id/iconeAcessivel"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginStart="@dimen/espaco_xs"
+                    android:src="@drawable/ic_acessivel"
+                    app:tint="@color/texto_terciario"
+                    android:visibility="gone"
+                    android:contentDescription="@string/veiculo_acessivel" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/indicadorTempoReal"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginStart="@dimen/espaco_m"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_ponto_verde"
+            android:contentDescription="@string/cd_indicador_tempo_real" />
+
+        <TextView
+            android:id="@+id/tempoPrevisao"
+            style="@style/Texto.Corpo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/espaco_s"
+            android:minWidth="64dp"
+            android:maxLines="1"
+            android:gravity="end"
+            android:textStyle="bold"
+            tools:text="4 min" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

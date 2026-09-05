@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/superficie_variante">
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapa"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/controlesFlutuantes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="@dimen/espaco_m"
+        android:layout_marginBottom="248dp"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/botaoCamadas"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_botao_flutuante"
+            android:src="@drawable/ic_camadas"
+            app:tint="@color/texto_secundario"
+            android:contentDescription="@string/cd_camadas" />
+
+        <ImageButton
+            android:id="@+id/botaoMinhaLocalizacao"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="@dimen/espaco_s"
+            android:background="@drawable/bg_botao_flutuante"
+            android:src="@drawable/ic_localizacao"
+            app:tint="@color/azul_primario"
+            android:contentDescription="@string/cd_minha_localizacao" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/espaco_m">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_campo_busca"
+            android:elevation="4dp"
+            android:paddingHorizontal="@dimen/espaco_m">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_busca"
+                app:tint="@color/texto_terciario"
+                android:contentDescription="@string/cd_buscar" />
+
+            <EditText
+                android:id="@+id/campoBusca"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:background="@null"
+                android:hint="@string/busca_mapa"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@color/texto_primario"
+                android:textColorHint="@color/texto_terciario"
+                android:textSize="15sp"
+                android:autofillHints="" />
+
+            <ImageView
+                android:id="@+id/botaoLimparBusca"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_fechar"
+                app:tint="@color/texto_terciario"
+                android:visibility="gone"
+                android:contentDescription="@null" />
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:scrollbars="none"
+            android:clipToPadding="false">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/filtrosMapa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                app:selectionRequired="true"
+                app:singleLine="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipLinhasProximas"
+                    style="@style/Widget.LinhaViva.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/filtro_linhas_proximas" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPontos"
+                    style="@style/Widget.LinhaViva.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filtro_pontos" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipTerminais"
+                    style="@style/Widget.LinhaViva.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filtro_terminais" />
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <include
+            android:id="@+id/bannerOfflineMapa"
+            layout="@layout/view_banner_offline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <LinearLayout
+            android:id="@+id/avisoPermissao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_info"
+            android:padding="@dimen/espaco_m"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/Texto.Apoio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/azul_escuro"
+                android:text="@string/permissao_local_titulo" />
+
+            <TextView
+                android:id="@+id/avisoPermissaoDetalhe"
+                style="@style/Texto.Apoio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/azul_escuro"
+                android:text="@string/permissao_local_detalhe" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botaoPermitirLocal"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_xs"
+                android:minHeight="40dp"
+                android:paddingHorizontal="@dimen/espaco_s"
+                android:text="@string/permissao_local_botao" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/painelInferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_folha_inferior"
+        android:elevation="12dp"
+        android:paddingBottom="@dimen/espaco_m"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="252dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/espaco_s"
+            android:background="@drawable/bg_puxador" />
+
+        <TextView
+            style="@style/Texto.Secao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/espaco_m"
+            android:paddingTop="@dimen/espaco_m"
+            android:text="@string/ponto_mais_proximo" />
+
+        <LinearLayout
+            android:id="@+id/blocoPontoProximo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="?attr/selectableItemBackground"
+            android:paddingHorizontal="@dimen/espaco_m"
+            android:paddingVertical="@dimen/espaco_xs">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_pin_pequeno"
+                app:tint="@color/azul_primario"
+                android:contentDescription="@null" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/espaco_s"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nomePontoProximo"
+                    style="@style/Texto.Corpo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    tools:text="Av. Getúlio Vargas, 1240" />
+
+                <TextView
+                    android:id="@+id/distanciaPontoProximo"
+                    style="@style/Texto.Apoio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="120 m · 2 min a pé" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/botaoFavoritarPonto"
+                android:layout_width="@dimen/alvo_toque"
+                android:layout_height="@dimen/alvo_toque"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_estrela_contorno"
+                app:tint="@color/ambar_aviso"
+                android:contentDescription="@string/cd_favorito" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listaPrevisoesMapa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espaco_xs"
+            android:paddingHorizontal="@dimen/espaco_m"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_previsao" />
+
+        <include
+            android:id="@+id/estadoMapa"
+            layout="@layout/view_estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/rodapeMapa"
+            style="@style/Texto.Apoio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espaco_s"
+            android:paddingHorizontal="@dimen/espaco_m"
+            android:textSize="11sp"
+            android:textColor="@color/texto_terciario"
+            android:text="@string/aviso_previsao_estimada" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

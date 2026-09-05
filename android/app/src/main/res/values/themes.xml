@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Tema.LinhaViva" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/azul_primario</item>
+        <item name="colorOnPrimary">@color/branco</item>
+        <item name="colorPrimaryContainer">@color/azul_claro</item>
+        <item name="colorOnPrimaryContainer">@color/azul_escuro</item>
+
+        <item name="colorSecondary">@color/verde_tempo_real</item>
+        <item name="colorOnSecondary">@color/branco</item>
+        <item name="colorSecondaryContainer">@color/verde_claro</item>
+        <item name="colorOnSecondaryContainer">@color/verde_tempo_real</item>
+
+        <item name="colorTertiary">@color/ambar_aviso</item>
+        <item name="colorOnTertiary">@color/branco</item>
+
+        <item name="colorError">@color/vermelho_erro</item>
+        <item name="colorSurface">@color/superficie</item>
+        <item name="colorOnSurface">@color/texto_primario</item>
+        <item name="colorSurfaceVariant">@color/superficie_variante</item>
+        <item name="colorOnSurfaceVariant">@color/texto_secundario</item>
+        <item name="colorOutline">@color/contorno</item>
+        <item name="android:colorBackground">@color/fundo</item>
+
+        <item name="android:statusBarColor">@color/azul_primario</item>
+        <item name="android:navigationBarColor">@color/superficie</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+
+        <item name="materialCardViewStyle">@style/Widget.LinhaViva.Card</item>
+        <item name="bottomNavigationStyle">@style/Widget.LinhaViva.BottomNav</item>
+        <item name="chipStyle">@style/Widget.LinhaViva.Chip</item>
+        <item name="materialButtonStyle">@style/Widget.LinhaViva.Botao</item>
+    </style>
+
+    <style name="Tema.LinhaViva" parent="Base.Tema.LinhaViva" />
+
+    <style name="Tema.LinhaViva.Splash">
+        <item name="android:statusBarColor">@color/azul_profundo</item>
+        <item name="android:navigationBarColor">@color/azul_profundo</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+    </style>
+
+    <style name="Widget.LinhaViva.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">@dimen/raio_card</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardBackgroundColor">@color/superficie</item>
+        <item name="strokeColor">@color/contorno</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="Widget.LinhaViva.BottomNav" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@color/superficie</item>
+        <item name="itemIconTint">@color/selector_nav</item>
+        <item name="itemTextColor">@color/selector_nav</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.LinhaViva.NavIndicator</item>
+    </style>
+
+    <style name="Widget.LinhaViva.NavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/azul_claro</item>
+    </style>
+
+    <style name="Widget.LinhaViva.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipCornerRadius">@dimen/raio_chip</item>
+        <item name="android:textSize">13sp</item>
+        <item name="chipMinHeight">36dp</item>
+    </style>
+
+    <style name="Widget.LinhaViva.Botao" parent="Widget.Material3.Button">
+        <item name="android:minHeight">@dimen/alvo_toque</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="Texto.TituloCabecalho" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textSize">@dimen/texto_titulo</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/branco</item>
+    </style>
+
+    <style name="Texto.SubtituloCabecalho" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/texto_sobre_azul_suave</item>
+    </style>
+
+    <style name="Texto.Secao" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textSize">@dimen/texto_secao</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.06</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/texto_terciario</item>
+    </style>
+
+    <style name="Texto.Corpo" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">@dimen/texto_corpo</item>
+        <item name="android:textColor">@color/texto_primario</item>
+    </style>
+
+    <style name="Texto.Apoio" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textSize">@dimen/texto_apoio</item>
+        <item name="android:textColor">@color/texto_secundario</item>
+    </style>
+
+    <style name="Badge.Linha" parent="">
+        <item name="android:layout_width">44dp</item>
+        <item name="android:layout_height">28dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_badge_linha</item>
+        <item name="android:textColor">@color/branco</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+</resources>

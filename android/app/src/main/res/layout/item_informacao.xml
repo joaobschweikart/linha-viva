@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="?attr/selectableItemBackground"
+    android:minHeight="@dimen/alvo_toque"
+    android:paddingHorizontal="@dimen/espaco_m"
+    android:paddingVertical="10dp">
+
+    <ImageView
+        android:id="@+id/iconeInformacao"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:src="@drawable/ic_info"
+        app:tint="@color/azul_primario"
+        android:contentDescription="@null" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="@dimen/espaco_m"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tituloInformacao"
+            style="@style/Texto.Corpo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            tools:text="Tarifas e cartão do usuário" />
+
+        <TextView
+            android:id="@+id/descricaoInformacao"
+            style="@style/Texto.Apoio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:visibility="gone"
+            tools:text="Válida para pagamento em dinheiro" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/valorInformacao"
+        style="@style/Texto.Corpo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/espaco_s"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/azul_primario"
+        android:visibility="gone"
+        tools:text="R$ 5,25" />
+
+    <ImageView
+        android:id="@+id/setaInformacao"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="@dimen/espaco_xs"
+        android:src="@drawable/ic_chevron"
+        app:tint="@color/texto_terciario"
+        android:contentDescription="@null" />
+</LinearLayout>

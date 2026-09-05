@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/bg_banner_offline"
+    android:paddingHorizontal="@dimen/espaco_m"
+    android:paddingVertical="10dp"
+    android:visibility="gone">
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_offline"
+        app:tint="@color/ambar_aviso"
+        android:contentDescription="@string/cd_indicador_offline" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/bannerOfflineTitulo"
+            style="@style/Texto.Apoio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/texto_primario"
+            android:text="@string/estado_offline" />
+
+        <TextView
+            android:id="@+id/bannerOfflineDetalhe"
+            style="@style/Texto.Apoio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="@string/estado_offline_detalhe" />
+    </LinearLayout>
+</LinearLayout>

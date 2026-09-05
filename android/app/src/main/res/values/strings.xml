@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Linha Viva</string>
+    <string name="app_subtitulo">Transporte coletivo de Chapecó</string>
+    <string name="app_assinatura">Protótipo acadêmico — Desenvolvimento Mobile</string>
+    <string name="app_versao">versão 1.0</string>
+
+    <string name="nav_mapa">Mapa</string>
+    <string name="nav_linhas">Linhas</string>
+    <string name="nav_favoritos">Favoritos</string>
+    <string name="nav_mais">Mais</string>
+
+    <string name="busca_mapa">Para onde você vai?</string>
+    <string name="busca_linhas">Buscar linha, bairro ou ponto</string>
+    <string name="filtro_linhas_proximas">Linhas próximas</string>
+    <string name="filtro_pontos">Pontos</string>
+    <string name="filtro_terminais">Terminais</string>
+    <string name="filtro_todas">Todas</string>
+    <string name="filtro_favoritas">Favoritas</string>
+    <string name="filtro_proximas">Próximas</string>
+    <string name="filtro_acessiveis">Acessíveis</string>
+
+    <string name="ponto_mais_proximo">Ponto mais próximo</string>
+    <string name="proximas_partidas">Próximas partidas</string>
+    <string name="pontos_do_itinerario">Pontos do itinerário</string>
+    <string name="linhas_favoritas">Linhas favoritas</string>
+    <string name="pontos_salvos">Pontos salvos</string>
+    <string name="avisos_de_operacao">Avisos de operação</string>
+    <string name="informacoes_uteis">Informações úteis</string>
+
+    <string name="titulo_linha">Linha %1$s</string>
+    <string name="titulo_ponto">Ponto %1$s</string>
+    <string name="aba_itinerario">Itinerário</string>
+    <string name="aba_horarios">Horários</string>
+    <string name="aba_mapa">Mapa</string>
+
+    <string name="acompanhar_tempo_real">Acompanhar em tempo real</string>
+    <string name="ver_ponto">Ver ponto</string>
+    <string name="ver_no_mapa">Ver no mapa</string>
+    <string name="aviso_ativo">Aviso ativado</string>
+    <string name="chega_ao_seu_ponto_em">Chega ao seu ponto em</string>
+    <string name="ao_vivo">Ao vivo</string>
+    <string name="seu_onibus_aqui">seu ônibus aqui</string>
+
+    <string name="previsao_sentido_origem">%1$s · %2$s</string>
+    <string name="previsao_veiculo">veículo %1$s</string>
+    <string name="previsao_programada">sai %1$s</string>
+    <string name="titulo_tempo_real">Linha %1$s · %2$s</string>
+    <string name="ao_vivo_em">%1$s · atualizado há %2$s</string>
+    <string name="sem_tempo_real">Sem posição em tempo real</string>
+    <string name="proxima_partida_programada">Próxima partida programada</string>
+    <string name="veiculo_nao_identificado">Veículo não identificado</string>
+    <string name="consulte_horarios">Ver horários</string>
+    <string name="aviso_sem_rastreamento">Sem dado da frota. Exibindo a tabela de horários programados.</string>
+    <string name="aviso_disparado">Aviso enviado: o veículo está chegando ao seu ponto.</string>
+    <string name="separador_distancia">· %1$s</string>
+    <string name="sem_previsao">Sem previsão</string>
+    <string name="minutos_curto">%1$d min</string>
+    <string name="chegando">Chegando</string>
+    <string name="voce_esta_no_ponto">Você está neste ponto</string>
+    <string name="distancia_a_pe">%1$s · %2$s a pé</string>
+    <string name="prefixo_veiculo">Prefixo %1$s</string>
+    <string name="veiculo_acessivel">Veículo acessível</string>
+    <string name="veiculo_sem_acessibilidade">Sem piso baixo</string>
+    <string name="abrigo_coberto">Abrigo coberto</string>
+    <string name="sem_abrigo">Sem abrigo</string>
+    <string name="ponto_acessivel">Acessível</string>
+    <string name="ponto_sem_acessibilidade">Sem rampa</string>
+    <string name="lotacao">Lotação</string>
+    <string name="lotacao_baixa">Baixa</string>
+    <string name="lotacao_media">Média</string>
+    <string name="lotacao_alta">Alta</string>
+
+    <string name="dia_util">Dias úteis</string>
+    <string name="dia_sabado">Sábados</string>
+    <string name="dia_domingo">Domingos e feriados</string>
+    <string name="nao_opera_neste_dia">Esta linha não opera neste dia.</string>
+    <string name="proxima_saida_terminal">Próxima saída do terminal: %1$s</string>
+    <string name="intervalo_medio">Intervalo médio informado: %1$d min</string>
+
+    <string name="estado_offline">Sem conexão no momento</string>
+    <string name="estado_offline_detalhe">Exibindo dados salvos no aparelho</string>
+    <string name="estado_offline_desde">Dados de %1$s</string>
+    <string name="erro_rede_titulo">Não foi possível atualizar</string>
+    <string name="erro_rede_detalhe">Verifique a conexão ou o endereço do servidor em Mais &gt; Servidor de dados.</string>
+    <string name="tentar_novamente">Tentar novamente</string>
+    <string name="carregando">Carregando…</string>
+    <string name="atualizando">Atualizando…</string>
+    <string name="vazio_linhas">Nenhuma linha encontrada para esta busca.</string>
+    <string name="subtitulo_linhas">Auto Viação Chapecó — dados fictícios</string>
+    <string name="vazio_linhas_dica">Tente outro número, nome de linha ou bairro.</string>
+    <string name="vazio_linhas_proximas">Nenhuma linha por perto</string>
+    <string name="vazio_linhas_proximas_dica">Nenhuma linha passa a menos de 1,2 km da sua posição atual.</string>
+    <string name="vazio_favoritos">Você ainda não salvou linhas ou pontos.</string>
+    <string name="vazio_favoritos_dica">Toque na estrela de uma linha ou de um ponto para acompanhá-lo por aqui.</string>
+    <string name="vazio_previsoes">Nenhuma partida prevista para as próximas 2 horas.</string>
+    <string name="vazio_pontos_proximos">Nenhum ponto de parada em um raio de 1,5 km.</string>
+
+    <string name="permissao_local_titulo">Localização desativada</string>
+    <string name="permissao_local_detalhe">Permita o acesso à localização para ver os pontos mais próximos de você.</string>
+    <string name="permissao_local_botao">Permitir localização</string>
+    <string name="permissao_local_negada">Sem localização, o app continua mostrando todas as linhas e pontos.</string>
+    <string name="gps_desligado">Ative o GPS do aparelho para localizar os pontos próximos.</string>
+    <string name="obtendo_localizacao">Obtendo sua localização…</string>
+
+    <string name="favoritar">Salvar nos favoritos</string>
+    <string name="desfavoritar">Remover dos favoritos</string>
+    <string name="favorito_adicionado">Salvo nos favoritos</string>
+    <string name="favorito_removido">Removido dos favoritos</string>
+    <string name="desfazer">Desfazer</string>
+
+    <string name="origem_tempo_real">tempo real</string>
+    <string name="origem_programado">horário programado</string>
+    <string name="atualizado_em">Previsões estimadas · atualizadas em %1$s</string>
+    <string name="distancia_indisponivel">Distância indisponível sem localização</string>
+    <string name="ponto_endereco_bairro">%1$s · %2$s</string>
+    <string name="sem_app_de_mapas">Nenhum aplicativo de mapas instalado.</string>
+    <string name="abrir_ponto">Abrir ponto</string>
+    <string name="qr_titulo">QR Code do ponto</string>
+    <string name="qr_detalhe">Escaneie a placa e abra este ponto direto</string>
+    <string name="qr_digitar">Digitar o código do ponto</string>
+    <string name="qr_codigo_invalido">Código não corresponde a um ponto conhecido.</string>
+    <string name="qr_sem_camera">Câmera indisponível neste aparelho.</string>
+    <string name="qr_instrucao">Aponte a câmera para o QR Code da placa do ponto</string>
+
+    <string name="titulo_favoritos">Favoritos e informações</string>
+    <string name="subtitulo_favoritos">Seus atalhos e serviços</string>
+    <string name="mais_titulo">Mais</string>
+    <string name="mais_subtitulo">Serviços, dados e configurações</string>
+    <string name="info_tarifas">Tarifas e cartão do usuário</string>
+    <string name="info_terminais">Terminais e pontos de embarque</string>
+    <string name="info_contato">Fale com a empresa / ouvidoria</string>
+    <string name="secao_dados">Dados e sincronização</string>
+    <string name="servidor_dados">Servidor de dados</string>
+    <string name="sincronizar_agora">Sincronizar agora</string>
+    <string name="ultima_sincronizacao">Última sincronização: %1$s</string>
+    <string name="nunca_sincronizado">Ainda não sincronizado com o servidor</string>
+    <string name="sincronizacao_ok">Dados atualizados</string>
+    <string name="restaurar_url_padrao">Restaurar padrão</string>
+    <string name="salvar">Salvar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="url_invalida">Informe uma URL http(s) terminada em /</string>
+
+    <string name="servidor_dados_ajuda">No emulador use http://10.0.2.2:3000/api/v1/. Em aparelho físico, informe o IP da máquina na mesma rede Wi-Fi. A URL precisa terminar com barra.</string>
+    <string name="app_online">Aplicativo online</string>
+    <string name="app_offline">Aplicativo sem conexão</string>
+    <string name="versao_completa">Linha Viva %1$s · Android 8.0 (API 26) ou superior</string>
+    <string name="secao_sobre">Sobre o aplicativo</string>
+    <string name="sobre_projeto">Sobre o projeto</string>
+    <string name="sobre_projeto_detalhe">Trabalho acadêmico — Unoesc, Análise e Desenvolvimento de Sistemas</string>
+    <string name="aviso_dados_ficticios">Dados fictícios</string>
+    <string name="aviso_dados_ficticios_detalhe">Linhas, horários, pontos e previsões são fictícios e servem apenas para demonstrar o aplicativo. Não representam a operação real da Auto Viação Chapecó.</string>
+    <string name="aviso_tempo_real_estimado">Posição estimada — depende da integração com os dados da empresa</string>
+    <string name="aviso_previsao_estimada">Previsões calculadas a partir do horário programado</string>
+
+    <string name="cd_voltar">Voltar</string>
+    <string name="cd_favorito">Favorito</string>
+    <string name="cd_buscar">Buscar</string>
+    <string name="cd_minha_localizacao">Centralizar na minha localização</string>
+    <string name="cd_camadas">Alternar camada do mapa</string>
+    <string name="cd_indicador_tempo_real">Informação em tempo real</string>
+    <string name="cd_indicador_offline">Aplicativo sem conexão</string>
+    <string name="canal_aproximacao">Aproximação do veículo</string>
+    <string name="canal_aproximacao_descricao">Avisa quando o ônibus acompanhado está perto do seu ponto.</string>
+    <string name="notificacao_aproximacao_titulo">Linha %1$s está chegando</string>
+    <string name="cd_item_linha">Linha %1$s, %2$s, %3$s</string>
+    <string name="cd_item_ponto">Ponto %1$s, %2$s</string>
+    <string name="cd_logo">Logotipo do Linha Viva</string>
+    <string name="cd_notificacoes">Avisos de operação</string>
+</resources>

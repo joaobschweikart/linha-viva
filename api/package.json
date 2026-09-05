@@ -1,0 +1,13 @@
+{
+  "name": "linha-viva-api",
+  "version": "1.0.0",
+  "description": "API REST de demonstração do aplicativo Linha Viva (dados fictícios).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node gerar-seed.js"
+  },
+  "engines": { "node": ">=16" },
+  "license": "MIT",
+  "private": true
+}
